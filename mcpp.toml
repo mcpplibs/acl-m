@@ -1,0 +1,60 @@
+# Module wrapper; upstream API preserved. Policy: mcpp-index/docs/mwrap.md.
+[package]
+namespace   = "mcpplibs.mwrap"
+name        = "acl"
+version     = "2.1.0"
+description = "ACL 2.1.0 C++ modules for mcpp (import mcpplibs.mwrap.acl;): animation clips compressed within a stated error and decompressed at any time, with the Realtime Math library (RTM 2.2.0) it is built on; the same bits on every platform"
+license     = "Apache-2.0"
+authors     = ["mcpp-community"]
+repo        = "https://github.com/mcpplibs/acl-m"
+platforms   = ["linux", "macos", "windows", "emscripten"]
+
+[targets.acl]
+kind = "lib"
+
+[build]
+# Both libraries are header-only, vendored from their releases (ACL v2.1.0
+# and the RTM v2.2.0 it pins) under upstream/ (upstream/documents.json: the
+# release tarballs, each file's checksum; patches/: the one upstream fix
+# applied). The module is built with no SIMD intrinsics (RTM_NO_INTRINSICS,
+# ACL_NO_INTRINSICS) and no contraction of a*b+c into an FMA, no fast math:
+# RTM's SSE and NEON paths round differently (NEON fuses multiply and add;
+# SSE takes approximate reciprocals), so with them a clip would decompress to
+# different bits on x86-64 and arm64. Without them, every platform computes
+# the same IEEE operations.
+# -Wno-missing-template-arg-list-after-template-kw: upstream writes
+# `template is_bound_to(` (decompress.impl.h), which clang 19 and later make
+# an error by default.
+sources = ["src/*.cppm"]
+include_dirs = ["upstream/acl/includes", "upstream/rtm/includes"]
+cxxflags = ["-DRTM_NO_INTRINSICS", "-DACL_NO_INTRINSICS", "-ffp-contract=off", "-fno-fast-math", "-Wno-missing-template-arg-list-after-template-kw", "-Wno-deprecated-declarations"]
+
+[dev-dependencies]
+compat.gtest = "1.15.2"
+
+[package.metadata.mwrap]
+upstream-version = "2.1.0"
+
+[[runtime.deploy]]
+from = "LICENSE"
+to   = "licenses/acl"
+
+[[runtime.deploy]]
+from = "NOTICE"
+to   = "licenses/acl"
+
+[[runtime.deploy]]
+from = "upstream/acl/README.md"
+to   = "licenses/acl/upstream/acl"
+
+[[runtime.deploy]]
+from = "upstream/acl/LICENSE"
+to   = "licenses/acl/upstream/acl"
+
+[[runtime.deploy]]
+from = "upstream/rtm/README.md"
+to   = "licenses/acl/upstream/rtm"
+
+[[runtime.deploy]]
+from = "upstream/rtm/LICENSE"
+to   = "licenses/acl/upstream/rtm"

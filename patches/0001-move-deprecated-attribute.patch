@@ -1,0 +1,23 @@
+From 0b06bd1cfec58592dabf6b08454fc59b0863ac71 Mon Sep 17 00:00:00 2001
+From: Nicholas Frechette <zeno490@gmail.com>
+Date: Fri, 5 Jan 2024 21:43:43 -0500
+Subject: [PATCH] fix(core): move deprecated attribute to its proper place
+
+---
+ includes/acl/core/variable_bit_rates.h | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/includes/acl/core/variable_bit_rates.h b/includes/acl/core/variable_bit_rates.h
+index 4bbd04607..0c491feb9 100644
+--- a/includes/acl/core/variable_bit_rates.h
++++ b/includes/acl/core/variable_bit_rates.h
+@@ -65,8 +65,7 @@ namespace acl
+ 	ACL_DEPRECATED("Internal implementation detail; to be removed in v3.0")
+ 	constexpr bool is_raw_bit_rate(uint32_t bit_rate) { return bit_rate == 24; }
+ 
+-	ACL_DEPRECATED("Internal implementation detail; to be removed in v3.0")
+-	struct BoneBitRate
++	struct ACL_DEPRECATED("Internal implementation detail; to be removed in v3.0") BoneBitRate
+ 	{
+ 		uint8_t rotation;
+ 		uint8_t translation;

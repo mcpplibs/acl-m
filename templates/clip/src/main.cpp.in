@@ -1,0 +1,54 @@
+// An arm of three joints waving for two seconds at 30 samples a second: ACL compresses it within 0.1 mm (at
+// 3 cm from each joint) and plays it back at any time, between the samples too.
+import std;
+import mcpplibs.mwrap.acl;
+
+struct Hand : acl::track_writer {
+    float angle_z = 0, reach = 0;
+    void write_rotation(std::uint32_t joint, rtm::quatf_arg0 rotation) {
+        if (joint == 2) angle_z = rtm::quat_get_z(rotation);
+    }
+    void write_translation(std::uint32_t joint, rtm::vector4f_arg0 translation) {
+        if (joint == 2) reach = rtm::vector_get_x(translation);
+    }
+    void write_scale(std::uint32_t, rtm::vector4f_arg0) {}
+};
+
+int main() {
+    constexpr std::uint32_t joints = 3, samples = 61;
+    acl::ansi_allocator allocator;
+    acl::track_array_qvvf clip(allocator, joints);
+    for (std::uint32_t joint = 0; joint < joints; ++joint) {
+        acl::track_desc_transformf desc;
+        desc.output_index = joint;
+        desc.parent_index = joint == 0 ? mcpplibs::mwrap::acl::k_invalid_track_index : joint - 1;
+        desc.precision = 0.0001f;
+        desc.shell_distance = 0.03f;
+        auto track = acl::track_qvvf::make_reserve(desc, allocator, samples, 30.0f);
+        for (std::uint32_t sample = 0; sample < samples; ++sample) {
+            const float time = static_cast<float>(sample) / 30.0f, wave = 0.4f * time * (2.0f - time);
+            track[sample] = rtm::qvv_set(rtm::quat_normalize(rtm::quat_set(0.0f, 0.0f, wave, 1.0f)), rtm::vector_set(joint == 0 ? 0.0f : 0.3f, 0.0f, 0.0f), rtm::vector_set(1.0f));
+        }
+        clip[joint] = std::move(track);
+    }
+    acl::compression_settings settings = acl::get_default_compression_settings();
+    acl::qvvf_transform_error_metric metric;
+    settings.error_metric = &metric;
+    acl::output_stats stats;
+    acl::compressed_tracks* compressed = nullptr;
+    if (const acl::error_result result = acl::compress_track_list(allocator, clip, settings, compressed, stats); !result.empty()) {
+        std::println("refused: {}", result.c_str());
+        return 1;
+    }
+    std::println("{} joints × {} samples: {} bytes raw, {} compressed", joints, samples, joints * samples * 10 * sizeof(float), compressed->get_size());
+    acl::decompression_context<acl::default_transform_decompression_settings> context;
+    context.initialize(*compressed);
+    for (const float time : {0.0f, 0.5f, 1.0f, 1.25f, 2.0f}) {
+        Hand hand;
+        context.seek(time, acl::sample_rounding_policy::none);
+        context.decompress_tracks(hand);
+        std::println("  at {:.2f} s the hand turns {:.4f} (z of its quaternion)", time, hand.angle_z);
+    }
+    allocator.deallocate(compressed, compressed->get_size());
+    return 0;
+}

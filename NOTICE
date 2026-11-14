@@ -1,0 +1,12 @@
+acl-m: C++ module wrapper
+Copyright (c) 2026 mcpp-community contributors
+
+The wrapper contributions are licensed under the Apache License, Version 2.0.
+Upstream code, copied interfaces and dependencies retain their original
+licenses and copyright notices. The Animation Compression Library is
+Copyright (c) 2017 Nicholas Frechette & Animation Compression Library
+contributors, and the Realtime Math library is Copyright (c) 2018 Nicholas
+Frechette; both are distributed under the MIT License. Their vendored headers,
+with their READMEs and LICENSE files, are retained in upstream/acl/ and
+upstream/rtm/; the one upstream fix applied is in patches/. Provenance and
+checksums are recorded in upstream/documents.json.

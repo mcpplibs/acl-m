@@ -1,0 +1,1003 @@
+{
+  "upstream": [
+    "https://github.com/nfrechette/acl/archive/refs/tags/v2.1.0.tar.gz",
+    "https://github.com/nfrechette/rtm/archive/refs/tags/v2.2.0.tar.gz"
+  ],
+  "upstream_sha256": [
+    "0ac8473cd30eb768bae1ef58558e3088242d6fef81f727ce7b5ff5af9be74fce",
+    "e627c46de1895b78eee63612ce4e5ade3af28e040edab6ec6f6521366b4e8b9b"
+  ],
+  "pruning": "Only the headers (ACL's includes/acl, RTM's includes/rtm) with each README and LICENSE: ACL v2.1.0 pins RTM v2.2.0 (external/rtm). Not vendored: the tests, tools, documents, test data, CMake files, and ACL's other external dependencies (catch2, sjson-cpp, the benchmark). acl/io is vendored but not part of the module (it needs sjson-cpp).",
+  "patches": [
+    {
+      "path": "patches/0001-move-deprecated-attribute.patch",
+      "upstream_commit": "https://github.com/nfrechette/acl/commit/0b06bd1cfec58592dabf6b08454fc59b0863ac71",
+      "why": "struct BoneBitRate carried its [[deprecated]] before `struct`, which clang 19 and later refuse (misplaced attributes); upstream moved it after `struct` on its develop branch."
+    }
+  ],
+  "documents": [
+    {
+      "path": "upstream/acl/README.md",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/README.md",
+      "sha256": "c3e51c3fdf0c13fe8db437a0bc31215d1af3b4df9d4fe1c58499271c33dfb9ec"
+    },
+    {
+      "path": "upstream/acl/LICENSE",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/LICENSE",
+      "sha256": "f706403ad318029b593c6acdfc98d3ba8dbdf501e61e466bc417ed68af11599e"
+    },
+    {
+      "path": "upstream/rtm/README.md",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/README.md",
+      "sha256": "cd547868265d1ee332a6626929140e56d827b16ba90c274faac3da19d3eb1d6d"
+    },
+    {
+      "path": "upstream/rtm/LICENSE",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/LICENSE",
+      "sha256": "f436784db9587c7ce9b3453a8e95bb3d95bca31f7dc7c59f4148bfc54c0bde61"
+    }
+  ],
+  "sources": [
+    {
+      "path": "upstream/acl/includes/acl/compression/compress.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/compress.h",
+      "sha256": "bc64bd9b0ceea011692788475ce589faef16cdaa3198d0c1c87301c022c71777"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/compression_level.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/compression_level.h",
+      "sha256": "545c93fd9dcae949278428dcabd59489ecaa220c3576f5c85c84db8f171de2e3"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/compression_settings.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/compression_settings.h",
+      "sha256": "8bc0b8ff9fe19b9644a4d5e7f9c5174d8d0e7c6bd16e41a6106632723294b4a7"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/convert.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/convert.h",
+      "sha256": "830719ed4f7573b638615754695783ea8867ea6bb34b80ce171123f2a67fca3c"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/fwd.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/fwd.h",
+      "sha256": "213bf8b4796469c852dfe26f198ac335c0c30e65b43ae51fffda9cb083cc42da"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/animated_track_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/animated_track_utils.h",
+      "sha256": "eb804084b22c57faa1ced31dea82c966d38264f0555e4eb8dcfff5addf609d2d"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/clip_context.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/clip_context.h",
+      "sha256": "26b7324cf6a690af624407932843456058d5b4e9ebad196b5c1f2a795c97ba7f"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/clip_context.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/clip_context.impl.h",
+      "sha256": "c9898c78abf7d2b07e4f4908bf388524e98e51af64d7e09b22edd8ad9e833467"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/compact.scalar.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/compact.scalar.h",
+      "sha256": "ac6de50e47ac7cc0cfd840ed4ee4460608c600d6812a54f25c975ec4a9b47ab9"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/compact.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/compact.transform.h",
+      "sha256": "9040b2a91664dd32e8fb7d3a1a80f0f365e06ece8b315bcbf3603f294ced01eb"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/compress.database.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/compress.database.impl.h",
+      "sha256": "7dc56574cd0f1d082d14ff9cbecc7d33bfcd6ffafcb35962996b28efe62a650a"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/compress.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/compress.impl.h",
+      "sha256": "20bc95867a8d3d0b21881946b532d0a444811c7f047c3d3046af26b4cca09b46"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/compress.scalar.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/compress.scalar.impl.h",
+      "sha256": "6d8a5537a944be60c64b0b4c6dde135a4373d0b374c3b89274eb90a1af68727c"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/compress.transform.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/compress.transform.impl.h",
+      "sha256": "f313ba105b5005626c8000133413915e3da8c1f2731b6b5c7fe97afc03af3c75"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/compression_level.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/compression_level.impl.h",
+      "sha256": "77e336c67a0e53ae9123c7ce05041fb28810a22397d2464e4fd52aa537301368"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/compression_settings.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/compression_settings.impl.h",
+      "sha256": "281ea2185c183fd9a87248642a13fc81250ad5a018520610038b43f80630f7c2"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/convert.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/convert.impl.h",
+      "sha256": "c52f3788c70f56e8a2055aadce2973bff18035eb97e89f2269cd43990d868f85"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/convert_rotation.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/convert_rotation.transform.h",
+      "sha256": "1ab71220301a15376d5eaa7da36ad80b1c75275a0a525a98aa6d44bb774e7d09"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/keyframe_stripping.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/keyframe_stripping.h",
+      "sha256": "0bbcd859eff898287e17bbf343078d32e328623b3947ff4160e51c14eea1c80b"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/normalize.scalar.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/normalize.scalar.h",
+      "sha256": "22884e0eeec40f424e360bad38a2e3e64452291af1cd88c51767be5c7596e9a3"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/normalize.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/normalize.transform.h",
+      "sha256": "3091a476ceec49e0e6bca8b02a0775c8d45a075e41a07b8b6f77a9702212fe97"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/optimize_looping.scalar.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/optimize_looping.scalar.h",
+      "sha256": "05d097d1e86996fbd1cf256126e684184dcc30397ac5cc1b35ccfc90b53577f4"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/optimize_looping.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/optimize_looping.transform.h",
+      "sha256": "04f708f04012a22757d57049ddaa2306ec5343aa10625455df8333229f1656dd"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/pre_process.common.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/pre_process.common.h",
+      "sha256": "b5d77224a1b7de91f851488c35c0bf35ca32ba6f50be7c881d6b9a6041a49332"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/pre_process.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/pre_process.impl.h",
+      "sha256": "d6a28dac878377eec50d7064355a24913d82092bdd2e9c52c7b711504bda3695"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/pre_process.scalar.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/pre_process.scalar.h",
+      "sha256": "1dc6fb5d1391c9c4d6286b07fdeb0f4f01b81d4123201be57fc0cc3c5e20621b"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/pre_process.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/pre_process.transform.h",
+      "sha256": "f8a290e3815da567daec5882dd6a8583624db16e9f09ff93deca7fb5b41f09f7"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/quantize.scalar.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/quantize.scalar.h",
+      "sha256": "099513419304e732a8d442fc8e2ad633ae1ad8edd0ae549eb486f108bf95e1a8"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/quantize.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/quantize.transform.h",
+      "sha256": "0712aa95c1f502727c521222ae1e5f34fbb05882ab527f7d4f1058b224fe6484"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/rigid_shell_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/rigid_shell_utils.h",
+      "sha256": "c83e95ffb08c5951a26015f239c8d6a3cc5cc08b9abd3f0479fac992a97f2780"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/sample_streams.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/sample_streams.h",
+      "sha256": "4e260a815c0d945f797513ea1bbd74d6f035c3b0a01c8da84138d8e2e6effcad"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/segment.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/segment.transform.h",
+      "sha256": "b6684e4b180090c3a9ca9c9d9afed88232bcc344c509707e85a9788c840f6d0c"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/segment_context.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/segment_context.h",
+      "sha256": "c9c4c5f9935b7e07a8a34cd1b7e9e6f364845dc886dad2a2d86ef7f8a94e17f9"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/track.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/track.impl.h",
+      "sha256": "b21860a5b05473a72832c6b58fcf5ac9f875e9e0a21eb2c3cae4d3e65b8ffca7"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/track_array.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/track_array.impl.h",
+      "sha256": "1552c8f568a7478b84c620a01b1aabac5f5997759defd4f5eee5e13f78c93c33"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/track_bit_rate_database.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/track_bit_rate_database.h",
+      "sha256": "36400d4067210ec286eb39cdf498e8f5393bb3d35fd015649a87d1d7c20ec2cf"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/track_error.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/track_error.impl.h",
+      "sha256": "2e51a9b8f420abe87e16d884ad57eca338740769c1a908ff6575a46e2a21f28d"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/track_list_context.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/track_list_context.h",
+      "sha256": "552620aed52cc25cd9f79e614a233c0caac8048b721f9387c31d07c3f895dc70"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/track_range.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/track_range.h",
+      "sha256": "e16de4986f92900335ed1090689a40c4690a8828f4fe36a3cec2aec29e482e1e"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/track_range_impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/track_range_impl.h",
+      "sha256": "ad39b3286b549d842164f2851b981be9e6fca924dd66c0c5742ef2e349f2ee1e"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/track_stream.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/track_stream.h",
+      "sha256": "e094c3c83df573771162eb37651a8b6154941b8a543257b8b125e7d5dd7136bb"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/transform_bit_rate_permutations.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/transform_bit_rate_permutations.h",
+      "sha256": "e71ace7ee45e67c6277888a4c71811956aceeaa8b92b9137a71a303bcb3e4f37"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/transform_clip_adapters.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/transform_clip_adapters.h",
+      "sha256": "291ba5b7e772ed61a83d5b652a3c1fe7543e89559bf5aedbc96bc1305ad3eabe"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/write_compression_stats_impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/write_compression_stats_impl.h",
+      "sha256": "eba506bff9c6c1488e9d331ce4b652fa372cced10caddc1c242dfea4fc3afa9b"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/write_range_data.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/write_range_data.h",
+      "sha256": "22ea74a25a9018b7c188ade94bbc26a840184233df7743d4cab1cbcf3fdaa2ce"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/write_segment_data.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/write_segment_data.h",
+      "sha256": "5d429ce1bffcf233c09c9100b4e5db3c2e60e2b042d058d709a3c2acb2ddc889"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/write_stats.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/write_stats.h",
+      "sha256": "994fd106327a1001ea88e71d39599f057ccd3445047aa806d6980dab654722a4"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/write_stream_data.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/write_stream_data.h",
+      "sha256": "ee3e802b26c4e33ade27731adaf879e9005bb77aad5aa7ca93682d4f0708af8f"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/write_sub_track_types.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/write_sub_track_types.h",
+      "sha256": "5787fd2ce6e15e47941525175d8208420ea238c2b1a65bbaf941deb47960b422"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/write_track_data_impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/write_track_data_impl.h",
+      "sha256": "895a3ccaa786f717c18ef0825feb5228363d058f64b174f6ddfd7da5d0ea6b86"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/impl/write_track_metadata.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/impl/write_track_metadata.h",
+      "sha256": "04ac9afa93f7618a8873f6ab998fe75879283b6f225cfe97c20a5335fac7e967"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/output_stats.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/output_stats.h",
+      "sha256": "916628ff8a883d40a688304074cf2754e303e74b7ea402c7d1e0fcfad43d0290"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/pre_process.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/pre_process.h",
+      "sha256": "337196e14c12193f41da35851f62d918a80e282aaf23f1d3e85cabc619fa330f"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/track.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/track.h",
+      "sha256": "c815fcd56b37d468be4b4a40765d329e3cf76d0a4af7d4fd70cbb029af1974f6"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/track_array.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/track_array.h",
+      "sha256": "263f827a549721ec6ea215be37e182213eb2702dd2beea0f3c511761141264eb"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/track_error.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/track_error.h",
+      "sha256": "961391fd45835b6427687da55fec45ca84ba5f1b45f116cd4ad9ea8fe3d194c3"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/transform_error_metrics.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/transform_error_metrics.h",
+      "sha256": "7418cc30c6e33d7e57eb2df9766d807641685378ae289d341299beb8b6201911"
+    },
+    {
+      "path": "upstream/acl/includes/acl/compression/transform_pose_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/compression/transform_pose_utils.h",
+      "sha256": "a7be1afe75ec20838756dbd02113fbd9d32b4a5055be60b41fe2a324230fda4f"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/additive_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/additive_utils.h",
+      "sha256": "d0d8bb034a341256e55c48d0c47da5a53da7d565500ae6810d75a211887d8336"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/algorithm_types.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/algorithm_types.h",
+      "sha256": "b1ba8fd60cba4503e95a9f89fdecbef5417d4f1d20f41af840b74ba757e40ef7"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/ansi_allocator.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/ansi_allocator.h",
+      "sha256": "3534baa6899f5ea7de263dfd81d72416754c46dc7432add036358e31b4076598"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/bit_manip_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/bit_manip_utils.h",
+      "sha256": "e9b9c067efa872d409c38966c01195fcad254cd2aa6ef7e8d27888a4e34142e6"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/bitset.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/bitset.h",
+      "sha256": "0d1b6f4f274b09b852d12d662336b6f96605e5a0984b07ab99cf99a5bfb26704"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/buffer_tag.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/buffer_tag.h",
+      "sha256": "11b2edff773bf0e101d7a1b12bcdb7d8841ed336a2d5c065ebeb93efd8efe4de"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/compressed_database.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/compressed_database.h",
+      "sha256": "8f2fdb2a893478857efef3d72484c0389e2243273e2b5179ec0e71100106ef88"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/compressed_tracks.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/compressed_tracks.h",
+      "sha256": "5b36bce0bd0e8bef13acfcc88c43cb162e95938704d129e1ca40f7e349b4ca7e"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/compressed_tracks_version.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/compressed_tracks_version.h",
+      "sha256": "4f8d884a22dbc14499f804b050f84eeb5af55901d809d9cec3b590486caf3031"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/enum_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/enum_utils.h",
+      "sha256": "d4df74df668e91100e869f8728fcfc4d7c4f3268687d556a7ee60220bf75a0ba"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/error.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/error.h",
+      "sha256": "03cd69ede2162698b2982132511f63651839acf4254023cdb6727f42c4e3c2c8"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/error_result.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/error_result.h",
+      "sha256": "1a004f691d05f6852b54d6eca77676cc1f0d3cee0c6168ea66eb8870b0101a96"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/floating_point_exceptions.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/floating_point_exceptions.h",
+      "sha256": "b516e4042f4110570fcc85551588407c4df7b7408e8ca5b871ef07a046c4c534"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/fwd.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/fwd.h",
+      "sha256": "0b10296aea4c53f7934d63ee442729756aa770abe325f2e11fca66850d0e07de"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/hash.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/hash.h",
+      "sha256": "616bf04f513d85d63490f6e2f601aaa80ec2c8eed169b5c911e60fdd43c11194"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/iallocator.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/iallocator.h",
+      "sha256": "b57fd286096e1f6c1ccd0b743eec7189b0a079b2d2b3d5f178b01ee51dc89c4e"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/atomic.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/atomic.impl.h",
+      "sha256": "4430ac82a64b3fc59239368850cc601931e3fa71c4baedbfd2d96ebf61db0ccb"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/bit_cast.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/bit_cast.impl.h",
+      "sha256": "befc3863fd757558238ea85f96f3906eb0cb490ce93c307c78054f6909aecd98"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/compiler_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/compiler_utils.h",
+      "sha256": "da7bd0048514f8baed4a74d6378281f46eda88e06b84639baa98974616f3d54e"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/compressed_database.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/compressed_database.impl.h",
+      "sha256": "9e632e9df6754b1bd69f84873598633a5317de19b5adeeafac1911a1c5ce8f67"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/compressed_headers.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/compressed_headers.h",
+      "sha256": "6318ab33163b6c66c1ceeadc6edcc48a1806d0dd99c2cab50b98729bab226242"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/compressed_tracks.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/compressed_tracks.impl.h",
+      "sha256": "550de676b3099b74561eb5cf378c346b07a787455515dbc9bb2b4a7e452d5b3e"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/debug_track_writer.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/debug_track_writer.h",
+      "sha256": "421f24b133ddff56e69c2522e314c889266fe8f654fa5bd5722711131d84e8cd"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/interpolation_utils.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/interpolation_utils.impl.h",
+      "sha256": "e6751dd07de861602bca4df232e0d22c4710e2c6c129efd52b626af0268127a2"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/time_utils.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/time_utils.impl.h",
+      "sha256": "55d4b3b115dad9e7afdda8bd6c70d42a5f6ba194e25feeda3e42858adcd7eafe"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/track_desc.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/track_desc.impl.h",
+      "sha256": "7ff94773536918d2fd87c61ac53cb0dafe5ec23799cbc90d80fa14ed872f40fd"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/track_formats.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/track_formats.impl.h",
+      "sha256": "34c916a654e100e0a2a5c4c7a7c03e6dbd980fb1580327fa372d35af13ad1648"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/impl/variable_bit_rates.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/impl/variable_bit_rates.h",
+      "sha256": "c9350a8b0d5cfe919c39feb5b2c7b102a85453f5a67a22a1e8c0fb21f6aff505"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/interpolation_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/interpolation_utils.h",
+      "sha256": "9ab07623bcbb711a7593b5a0165545e8810d76d7a3ad58bd0c03e6980579295e"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/iterator.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/iterator.h",
+      "sha256": "3f6b748a308e666596ddb6e495ad72d3a4e0b87e91f4ccf3f6bb1a1a3405c54f"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/memory_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/memory_utils.h",
+      "sha256": "bf351516e7ce440e06ee102ed9f081cbc00392e5189d9fdfe524c57284c78d42"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/ptr_offset.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/ptr_offset.h",
+      "sha256": "e8b8cddcd976627cb2d028e62964d615d8483429fe20f005f2ee98a568a73d61"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/quality_tiers.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/quality_tiers.h",
+      "sha256": "da614c1d7b4c9aca0f443c3d73d9add983cd4460a75df1f6ad889b59aa004e59"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/range_reduction_types.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/range_reduction_types.h",
+      "sha256": "15c7d623a8fed83731eba62dca56975c8cea2b909f5ea3e246c7467afc58174c"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/sample_looping_policy.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/sample_looping_policy.h",
+      "sha256": "fcddcfff602a597c1ea2c26195b77993c98b48d6fabac9b369362513dba426a2"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/sample_rounding_policy.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/sample_rounding_policy.h",
+      "sha256": "7ea31cdf95132492bf2e16c94efe37fb980360fb71d9fc9b61640746530a7453"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/scope_profiler.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/scope_profiler.h",
+      "sha256": "70890fafd423ac25ea7ba9566b4f703f5ce4d2222d9c6836baa6452ce7d8bb29"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/string.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/string.h",
+      "sha256": "4ee0e5c294a4441a0e69d714569513c784029badf66e9a1ff4315af3e9b7ddaf"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/time_utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/time_utils.h",
+      "sha256": "42c4d92f729cb983ab98487d981e577a17b996c68d6cc305d2b4a13c94200dee"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/track_desc.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/track_desc.h",
+      "sha256": "e08bf64a7894639383e070472f9dd7cfcc0d49ddc1dfe3ba09c779ed14361a05"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/track_formats.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/track_formats.h",
+      "sha256": "7b163634231284074e51f3bd55e20abed0c2152f6d7f8477b2343fa5f52c9054"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/track_traits.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/track_traits.h",
+      "sha256": "3f16cc2f7b2f0611767be98e7fe8a70f790d9cecb1a0225deb402904a4887bed"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/track_types.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/track_types.h",
+      "sha256": "b3c93d3976c981119291009473416d11f3ff308443ba75666eb57ad09f76a31a"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/track_writer.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/track_writer.h",
+      "sha256": "f69bc3d5ceda2a7154b3fcfa85ee4fc4ddda7e7737a6efe0c8423d6183bda5d9"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/unique_ptr.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/unique_ptr.h",
+      "sha256": "d2c7e77e32eab0e03438856f6d2f24c56ab7b4120011913a035b70064d558dc0"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/utils.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/utils.h",
+      "sha256": "776f28b52ca394c0d9edc1803daf2f546c1f65a0c07ca0e3e472137593ab50cf"
+    },
+    {
+      "path": "upstream/acl/includes/acl/core/variable_bit_rates.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/core/variable_bit_rates.h",
+      "sha256": "1c04f34ed3d414d532ae5f684b0045e4bd7bc22b0b10303b20816c7f9e7b1748",
+      "patch": "patches/0001-move-deprecated-attribute.patch"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/database/database.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/database/database.h",
+      "sha256": "37a6867c6fa770a2dc09b070e17c55f7b7e15e0386c543750d7a1b4c3f3694da"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/database/database_settings.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/database/database_settings.h",
+      "sha256": "8132397c04749c716b4bb141ab1f8b3e741b63e715779a579e9ff0e3584ca77a"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/database/database_streamer.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/database/database_streamer.h",
+      "sha256": "d0a510b21e5d70a0e8f04aaea75c0d4b604209d41f33c5e9eb1a04c37e952012"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/database/impl/database.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/database/impl/database.impl.h",
+      "sha256": "69547c6f651d5307a88bc9a8918a94f08226c8eab98b046ffd776134b6ea026a"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/database/impl/database_context.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/database/impl/database_context.h",
+      "sha256": "6032a6e2715d518e9171b4f62470956990caaf297d5e8c42e1f893b88103607a"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/database/impl/database_streamer.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/database/impl/database_streamer.impl.h",
+      "sha256": "646dcb09315e2bd2353a776ffed865fafbcd8b6f519a1faff3b4f4a46ae10037"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/database/impl/debug_database_streamer.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/database/impl/debug_database_streamer.h",
+      "sha256": "f88093cad01259fbdc943273a972fbed495177612cc371a15aafe9a32c3eb5f6"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/database/null_database_streamer.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/database/null_database_streamer.h",
+      "sha256": "787e1551d8a1307cf3f24fc614e6cdc7e91d7267542e0eb115e04e9cb4603599"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/decompress.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/decompress.h",
+      "sha256": "f25b41d94b70b1b4d994f9959739e1d046da2fd86ff111e94eafe2b3498944f5"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/decompression_settings.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/decompression_settings.h",
+      "sha256": "b18d7c57fc9f0d0ab33e9975609eed04f8c924671d03fcc19859491d376f8294"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/fwd.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/fwd.h",
+      "sha256": "b0d013e9c4196c7b1ee5de2b31f2d81ff09663a759d6b0d0d45ea44eb086227d"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/animated_track_cache.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/animated_track_cache.transform.h",
+      "sha256": "1faa25731f93278e081a0f85d173afef32d53f58717a0fcdf85c778e8848fd65"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/constant_track_cache.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/constant_track_cache.transform.h",
+      "sha256": "d8e27f979b095c90f6f1bdad54fb5896492fba4236d1952d431a1c623fee64d7"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/decompress.impl.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/decompress.impl.h",
+      "sha256": "96abe0d1905c80e0233701b7dd43afcf969be967261f39fe38ebc5279d216b6d"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/decompression.scalar.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/decompression.scalar.h",
+      "sha256": "f97bf4f5e94f6b72f66e0a033b3c3b0d65dd224a301f7005a20aba9628136d2c"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/decompression.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/decompression.transform.h",
+      "sha256": "4172d18969a53f2e8d9a00155bcbc3eb9efd1f87330fdb228fca1f1e4e5e7d62"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/decompression.universal.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/decompression.universal.h",
+      "sha256": "f7d67164b3ed8e9d165181d958ffa781c07722e48bea34affb7df262ebd4f0f4"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/decompression_context.transform.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/decompression_context.transform.h",
+      "sha256": "a68bf5accf83c6d58eec0ecc47747af4df75b9f5e974334df245e8d55bb34139"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/decompression_context_selector.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/decompression_context_selector.h",
+      "sha256": "14606b7dee05eb91dae7bc8a9f327a1f94d0d0d278dc23ca056b94e0cf733fe2"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/decompression_version_selector.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/decompression_version_selector.h",
+      "sha256": "1ef48876e0fa98705e0f7868fe175b7956cc0eb086def0bcf29f430c0a12f6ff"
+    },
+    {
+      "path": "upstream/acl/includes/acl/decompression/impl/track_cache.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/decompression/impl/track_cache.h",
+      "sha256": "46e4266e6596a600899ee640e7886bf6bb178a4155da8a8ae5dfa29276a15839"
+    },
+    {
+      "path": "upstream/acl/includes/acl/fwd.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/fwd.h",
+      "sha256": "f845f44eee4640bf74e11f06b4ae526bc5b0c635eef63ad2e6cbaf66a75b5a45"
+    },
+    {
+      "path": "upstream/acl/includes/acl/io/clip_reader.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/io/clip_reader.h",
+      "sha256": "5da8c907f9c06bf38245851f0e62d7b56ad3080bb4ba9a6bd1c0b36521d91941"
+    },
+    {
+      "path": "upstream/acl/includes/acl/io/clip_reader_error.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/io/clip_reader_error.h",
+      "sha256": "bfb8d5b828c91ce93203f432328e4465d60b8d0f23c31f2d65ee7e7f9f12a411"
+    },
+    {
+      "path": "upstream/acl/includes/acl/io/clip_writer.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/io/clip_writer.h",
+      "sha256": "d233173af0fd6c6c66ac2b991b7a89da06637a2cd912c2de1871baf858e02c6b"
+    },
+    {
+      "path": "upstream/acl/includes/acl/io/fwd.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/io/fwd.h",
+      "sha256": "09e703a794bca2a8730aa10c8deae50ea2cc02e5874677adf8e49d2edf20baff"
+    },
+    {
+      "path": "upstream/acl/includes/acl/math/quat_packing.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/math/quat_packing.h",
+      "sha256": "20373a2a5271689de8d11eac1959382bdbd472562b761cdef0100ac2ccab3a14"
+    },
+    {
+      "path": "upstream/acl/includes/acl/math/quatf.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/math/quatf.h",
+      "sha256": "ae7c152b1f737af389b68d65a2fdf7748c0f1c0add9309b10882208ca643562b"
+    },
+    {
+      "path": "upstream/acl/includes/acl/math/qvvf.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/math/qvvf.h",
+      "sha256": "5eac28366569bfc7eaab5ccbdbfc4775218f4f3b20c6e199b2ed87f4cd9c1054"
+    },
+    {
+      "path": "upstream/acl/includes/acl/math/scalar_packing.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/math/scalar_packing.h",
+      "sha256": "d37ff14112e8cf1ea275222aa4ea0e199f3a5dcc161b7ac39b01d612a877996c"
+    },
+    {
+      "path": "upstream/acl/includes/acl/math/vector4_packing.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/math/vector4_packing.h",
+      "sha256": "9bf55b4fd7ea147bb529981f839785e53e772115ae944d611f3bdfff8d96dc9f"
+    },
+    {
+      "path": "upstream/acl/includes/acl/math/vector4f.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/math/vector4f.h",
+      "sha256": "329a475a65baa85dd0aea30337b7d4ce0e1cd358fc0af9c802a9562a76ee8d32"
+    },
+    {
+      "path": "upstream/acl/includes/acl/version.h",
+      "source": "https://github.com/nfrechette/acl/blob/v2.1.0/includes/acl/version.h",
+      "sha256": "0aef04f7a42dde4a2c17344ceaccdddc92b470537f07ec0a16892062ede44a9c"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/constants.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/constants.h",
+      "sha256": "20ed7b123181a9b2ed556496c7626f4fd56251f17c010047bcc3a8c87536a1a5"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/fwd.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/fwd.h",
+      "sha256": "64f9bb39a442cd205d895ab9e767fe03c8b37a5b8a65e7b3a85d16ca1824cec7"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/bit_cast.impl.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/bit_cast.impl.h",
+      "sha256": "be05aeb73f0ad4e8a6e999c1454d2594cc81dcc1e77c0b0bb5dd79117e187031"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/cmath.impl.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/cmath.impl.h",
+      "sha256": "1ca6b6414aee135bafcaa3df29ca2fd15b085131da294ca422cf581f77125e77"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/compiler_utils.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/compiler_utils.h",
+      "sha256": "86fd7f20aa3c33c09974f43d6290e6e6f2622396e79c75d0ca3ef23d4430a4c5"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/detect_arch.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/detect_arch.h",
+      "sha256": "9532bb206f1edb35b4f19b0c8fc9889bd11b6d4c34f95ecf4759f814e2b53c80"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/detect_compiler.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/detect_compiler.h",
+      "sha256": "5e206a255b82f2a50e58e6aaa541af3e533ee78b3ceb858d95a7c189121bd185"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/detect_cpp_version.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/detect_cpp_version.h",
+      "sha256": "6d4d8c0bc60dc1e2d299b494ff9b6381c4fc4b30c0dc4670715960fd603deea4"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/detect_features.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/detect_features.h",
+      "sha256": "39b6724f9a0f48a0e243b342a462e95bf86c9fd7fc9cdbfb3f970de083aa5915"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/error.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/error.h",
+      "sha256": "d8b7ec3969d50cc4692779a24fc93894ad203436c73b7cb273f2d3a7c5b18ecf"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/macros.mask4.impl.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/macros.mask4.impl.h",
+      "sha256": "1e9cada800c6d2019813580730b130a78b33879b5518f96a1d5e1b4db71400b6"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/macros.matrix.impl.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/macros.matrix.impl.h",
+      "sha256": "d333ad302ed182ae443a315411a700c2c17c44d4dced3ce637dca9cb48a8d235"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/macros.vector4.impl.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/macros.vector4.impl.h",
+      "sha256": "5bc01fbe8c0006b626737f078cacbc58b153cfce081488d379f4bc1753ebcddb"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/mask_common.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/mask_common.h",
+      "sha256": "8a13c1aa7040ac8d8e3824f544fd487e58f5cb9882580376980b44d2abf629e6"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/matrix_affine_common.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/matrix_affine_common.h",
+      "sha256": "c01e6085ad3d8300337284684f24ff88fb84aa17ae535ada3df23fef1ee5e3c5"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/matrix_cast.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/matrix_cast.h",
+      "sha256": "4dd376b2b0e63cc6e1a2d1d321e51cb7cb370249d046e53172f11c96f51a2742"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/matrix_common.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/matrix_common.h",
+      "sha256": "83970c89155079b5c4e8c92deb52a950ba0562630995c3aefe2884eeebb010f8"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/memory_utils.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/memory_utils.h",
+      "sha256": "8c1792963c1b8d34406d60b189eea963beae83fa96072e24e060094d494551e4"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/quat_common.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/quat_common.h",
+      "sha256": "6b3a2e53d725b5b2c6a103bd39b25601730f2526f4ab4fcadc387d5c000b1c3b"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/qv_common.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/qv_common.h",
+      "sha256": "60337a12a6c6040e6ccc8061749e7968ef79a0883c4e98652ea811a658367521"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/qvs_common.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/qvs_common.h",
+      "sha256": "2898e50885e2107e5582770c4c8c17ed65d7715b644aa32f4a3f30242ef9cae7"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/qvv_common.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/qvv_common.h",
+      "sha256": "1ab40ae1267ff94141fa3f9559d51576a3b4a6810bbce47e452ec20d483794ea"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/scalar_common.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/scalar_common.h",
+      "sha256": "db7438edb76f148b3f812e1998d4c74e19e2148dbb35b03c42e091a035680f5e"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/type_args.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/type_args.h",
+      "sha256": "f1252236daf83a3d27b22e8b9130fada34993985f9ca1e9d6eee4cd59e7b40fc"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/impl/vector_common.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/impl/vector_common.h",
+      "sha256": "7168a0d6d9f3382cd080531e820818d762cbb6b8e5151f6e6753c6fd1382e48b"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/macros.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/macros.h",
+      "sha256": "b599e5b7aa9bd6bd14e29eceeb649fa57c78888071d1d0d3053036f2b14f9363"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/mask4d.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/mask4d.h",
+      "sha256": "28d883bd041988c0d2aa8a9a38297f4f8c1d926676394d2afd0cfc661c0d3766"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/mask4f.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/mask4f.h",
+      "sha256": "8b1fe7013ecc7dcd59d398ed96be01659514fb74cdb911d490ee2ddf8a97ad64"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/mask4i.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/mask4i.h",
+      "sha256": "1ec144463ed53071bc03b3d1e1158218399afbe09562f22a0ae1164933ff8bcf"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/mask4q.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/mask4q.h",
+      "sha256": "d368d288c3dce8070f9b903370a3799fb0f7626d120456b0b51aae951f333199"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/math.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/math.h",
+      "sha256": "e1463bb9950b9f7c50c42b2ca9f9a190438a165a770350a9e79379fcca49d515"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/matrix3x3d.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/matrix3x3d.h",
+      "sha256": "684700fe679f22815596ca598ea0fb5df631ca239e0b94c268962586c4daff95"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/matrix3x3f.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/matrix3x3f.h",
+      "sha256": "300dfa17c4329e5fdf1f8d55b06f7c29a2852d7df17c15596d3150faaff00110"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/matrix3x4d.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/matrix3x4d.h",
+      "sha256": "3175e8a9748b29c038793adf8dc601633b74c1c8b830304be21fd2a3355e4021"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/matrix3x4f.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/matrix3x4f.h",
+      "sha256": "87a6daacc66b30385e82a3134fdfb40852d55eddb40431a02f4d845b0fb39895"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/matrix4x4d.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/matrix4x4d.h",
+      "sha256": "525652bcdda41f6e24e30e29be000a36d431420b15807e3184a6fb7255b71292"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/matrix4x4f.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/matrix4x4f.h",
+      "sha256": "192c644e3f76dcee7144659c2885ec225996eb6495eebd471b33260dd68bf124"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/packing/quatd.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/packing/quatd.h",
+      "sha256": "478dbcebc2a99537d3db0e7add7062944c14a613c5bb408fa3a99740c1d29b98"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/packing/quatf.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/packing/quatf.h",
+      "sha256": "f60e14f68b72c0403de22b830c568ce68b88ebfbeab97a3652d5c3bcf99c5c3b"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/quatd.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/quatd.h",
+      "sha256": "c02129f73fdaf38fef56457281a19cd792c366dd32d7fdda76fb35b66cbacd0e"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/quatf.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/quatf.h",
+      "sha256": "a384590263589859446b70e0a4bc1c1e7e8dcb4b0b3d3e412e78186ccd92b4d0"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/qvd.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/qvd.h",
+      "sha256": "fbdca4e9eaf6f67213fe355d91c5ebecb865016f5dfee7ecb6273c0f3c89b345"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/qvf.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/qvf.h",
+      "sha256": "945ed6eb67554f1451346a1111c182f5efb6e05a0ef0cc504d9f6785d718917a"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/qvsd.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/qvsd.h",
+      "sha256": "6f56af684ff12d30d16e5f419f49bbe34936549e4b495cb122353e919a4afdbb"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/qvsf.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/qvsf.h",
+      "sha256": "c4229277f7e2d884d5e2a97f3437a10c91341fb6b9ae2a926778754e6a5d7e84"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/qvvd.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/qvvd.h",
+      "sha256": "2a42e50fd5a2573f78ffce73320aafa8e4a4a471eb5505fd863e213a8700d876"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/qvvf.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/qvvf.h",
+      "sha256": "8d91a49bbc19b87bfc39d9f0199f0f9552f10aaee2fb46fe9ed20a44a4b51b2f"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/scalard.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/scalard.h",
+      "sha256": "32e4de4d3c9172f2dbfd8eb460b8f20da0489e993d8775ba15a21e54ab25ce9a"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/scalarf.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/scalarf.h",
+      "sha256": "077bdb4e667bc6dfd48917522adffb9da174660c63d0cc6773b126d80f93d76b"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/type_traits.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/type_traits.h",
+      "sha256": "8e16e17e4ac9ce9ba3a6cbefb38df0b4dda742f6827afd02a122958bb1b957ed"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/types.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/types.h",
+      "sha256": "b069b553fb14b87d7df025cdbb6740f3b9d762f2bf2ef91853196a9053f7f3bd"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/vector4d.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/vector4d.h",
+      "sha256": "4b49facc4491f12f32e1baca70b90ef999cc96b3e3702f758b81139dec0daa31"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/vector4f.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/vector4f.h",
+      "sha256": "c67077d16feb6a65f3d28fc0a54f80e76eca817d089e742a4a290aad52388200"
+    },
+    {
+      "path": "upstream/rtm/includes/rtm/version.h",
+      "source": "https://github.com/nfrechette/rtm/blob/v2.2.0/includes/rtm/version.h",
+      "sha256": "2841ea49a3c7cf0a6716bce19b8f2054726ee8ecfbf4c4aae6236dded85ed3d7"
+    }
+  ]
+}

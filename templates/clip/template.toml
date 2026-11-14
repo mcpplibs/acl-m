@@ -1,0 +1,4 @@
+[template]
+description  = "Compress an animation clip within an error and play it back at any time with import mcpplibs.mwrap.acl"
+default      = true
+post_message = "Run `mcpp run`."
